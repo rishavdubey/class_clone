@@ -3,7 +3,7 @@ var nav = document.querySelector(".main-nav-dropdown.js-main-nav-dropdown");
 var navMenuTrigger = document.querySelector(
   "div[data-name=MAIN_NAV_TRIGGER_CONTAINER]"
 );
-
+var htmlElement = document.querySelector("html")
 navMenuTrigger.addEventListener("mouseover", openNavMenu);
 
 nav.addEventListener("mouseleave", closeNavMenu);
@@ -31,12 +31,14 @@ window.addEventListener("click", function (e) {
 function openNavMenu() {
   nav.classList.add("is-open");
   backgroundFadeIn();
+  htmlElement.classList.add("nav-open");
 }
 
 // Close Main Nav Menu
 function closeNavMenu() {
   nav.classList.remove("is-open", "has-visibile-subsection");
   backgroundFadeOut();
+  htmlElement.classList.remove("nav-open");
 }
 
 // Opening Sub Menu
