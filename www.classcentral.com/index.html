@@ -9614,50 +9614,7 @@
                 </div>
               </div>
             </nav>
-            <script>
-              var el = document.querySelector("#page-home > div.contain-page > header > div.relative.bg-white.cc-header.border-bottom.border-gray-light > nav > div.margin-right-small.large-up-margin-right-medium");
-              el.onmouseover = function openNavMenu(){
-                  var element = document.querySelector("#page-home > div.contain-page > header > div.relative.bg-white.cc-header.border-bottom.border-gray-light > nav > div.margin-right-small.large-up-margin-right-medium > nav");
-                  var background = document.querySelector("#page-home > div.contain-page > header > div.width-100.height-100.fixed.top.left");
-                  element.classList.add("is-open");
-                  background.classList.remove('animate-fade-hidden');
-              }
-          
-              function openSubmenu(obj){
-                  var getDiv = JSON.parse(obj.getAttribute("data-detail")).childListId;
-
-                  var submenuItem = document.querySelector(`div[data-list-id=${getDiv}]`);
-          
-                  var submenuList = document.querySelector("#page-home > div.contain-page > header > div.relative.bg-white.cc-header.border-bottom.border-gray-light > nav > div.margin-right-small.large-up-margin-right-medium > nav > div.main-nav-dropdown__subsections").children;
-                
-                  for(let i=0; i<submenuList.length; i++){
-                      submenuList[i].setAttribute("hidden", '');
-                  }
-          
-                  var nav = document.querySelector("#page-home > div.contain-page > header > div.relative.bg-white.cc-header.border-bottom.border-gray-light > nav > div.margin-right-small.large-up-margin-right-medium > nav");
-                  nav.classList.add("has-visibile-subsection");
-                  submenuItem.removeAttribute("hidden");
-              }
-          
-              var nav = document.querySelector("#page-home > div.contain-page > header > div.relative.bg-white.cc-header.border-bottom.border-gray-light > nav > div.margin-right-small.large-up-margin-right-medium > nav")
-              
-              nav.addEventListener("mouseleave", closeNavMenu);
-              window.addEventListener('click', function(e){   
-                if (!nav.contains(e.target)){
-                  closeNavMenu();
-                }
-              });
-              function closeNavMenu(){
-                  var element = document.querySelector("#page-home > div.contain-page > header > div.relative.bg-white.cc-header.border-bottom.border-gray-light > nav > div.margin-right-small.large-up-margin-right-medium > nav");
-                  var background = document.querySelector("#page-home > div.contain-page > header > div.width-100.height-100.fixed.top.left");
-            
-                  element.classList.remove("is-open");
-                  element.classList.remove("has-visibile-subsection");
-                  background.classList.add("animate-fade-hidden");
-              }
-          
-              </script>
-
+         
           </div>
           <div class="hidden xlarge-up-flex" data-detail='{"name": "report"}' data-menu="report"
             data-name="NAV_DROPDOWN" style="align-items: center; height: 100%;">
@@ -9739,6 +9696,7 @@
               </div>
             </div>
           </div>
+          <script src="./navControl.js"></script>
           <div class="row nowrap horz-align-right vert-align-middle">
             <div class="xsmall-only-hidden margin-horz-xsmall" data-detail='{"name": "lists"}' data-menu="lists"
               data-name="NAV_DROPDOWN">
